@@ -1,3 +1,50 @@
+* {
+  /* background-color: black; */
+}
+
+/* Custom CSS Classes */
+.textColor {
+  color: #11845B !important;
+}
+
+.ml-10px {
+  margin-left: 10px !important;
+}
+
+.p-all-5px {
+  padding: 5px !important;
+}
+
+.mr-10px {
+  margin-right: 10px;
+}
+
+.mt-10px {
+  margin-top: 10px;
+
+}
+
+.text-overflown {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.align-vertical {
+  align-items: center;
+  display: flex;
+
+}
+
+/* ::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: red;
+}
+::-webkit-scrollbar-track{
+  background-color: white;
+} */
+
 .logoimage {
   width: 150px;
   position: relative;
@@ -26,9 +73,11 @@
   text-align: left;
   margin-top: 10px;
 }
-.form-fields label{
+
+.form-fields label {
   font-weight: 300px;
 }
+
 .form-fields input {
   background-color: #282c34;
   padding: 10px;
@@ -44,25 +93,30 @@
   display: flex;
   align-items: center;
 }
+
 .forgotpass-section>div input {
   margin-right: 10px;
 }
+
 input[type=checkbox]:not(:checked) {
   height: 15px;
   width: 15px;
   border: 2px solid #11845B;
   -webkit-appearance: none;
 }
+
 input[type=checkbox]:checked {
   accent-color: #11845B;
   height: 15px;
   width: 15px;
   /* border: 1px solid green; */
 }
-.forgotpass-section a h6{
-  color:#11845B !important;
+
+.forgotpass-section a h6 {
+  color: #11845B !important;
 }
-.Register-Login-Btn{
+
+.Register-Login-Btn {
   color: #11845B !important;
   font-weight: 900 !important;
   border: 3px solid white !important;
@@ -72,16 +126,165 @@ input[type=checkbox]:checked {
 
 
 /* SigninPage */
-.create-account{
+.create-account {
   color: #11845B !important;
 
 }
 
+
 /* Sidebar-mainContainer */
-.Sidebar-mainContainer{
-  z-index: 1;
+.Sidebar-mainContainer {
+  background-color: black;
+  padding: 10px;
+  position: sticky;
+  top: 0px;
+  overflow-y: scroll;
+}
+
+.sidebar-logo {
+  width: 150px;
+}
+
+.sidebar-auth-btn {
+  border: 1px solid #11845B !important;
+  margin-top: 10px !important;
+  width: 200px !important;
+  color: white !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+/* sidebar-card */
+.sidebar-card-mainCont {
+  color: white;
+  border: 1px solid white;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.profileimage {
+  display: flex;
+  justify-content: center;
+}
+
+.profileimage div {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-btn {
+  border: 1px solid white !important;
+  margin: 10px !important;
+}
+
+.text-styling {
+  font-size: 14px !important;
+}
+
+.Connected-Wallet {
+  margin-top: 20px !important;
+}
+
+/* SideBar-filtersection */
+.SideBar-filtersection-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
+}
+
+.SideBar-filtersection {
+  color: white;
+  border: 2px solid white;
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+/* navbar */
+
+.navlinks-icons {
+  background-color: hsl(168deg 16% 6%);
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.Navbar-account-circle svg {
+  font-size: 40px !important;
+}
+
+.divider {
+  background-color: white !important;
+  margin: 15px 5px !important;
+}
+
+/* Home */
+.Home-MainContainer {
+  display: flex;
+}
+
+.home-searchbar {
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+  background-color: hsl(163deg 28% 5%);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
 
 }
+
+.home-searchbar svg {
+  color: white;
+  margin-right: 5px;
+}
+
+.home-searchbar input {
+  background-color: hsl(163deg 28% 5%);
+  border: none;
+  width: 100%;
+}
+
+.home-searchbar input:focus {
+  border: none;
+  outline: none;
+}
+
+.balancedetails-text {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.balancedetails-text span {
+  color: hsl(152deg 95% 39%);
+
+}
+.balance-Assets{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.balance-Assets >svg{
+  font-size: 60px !important;
+  
+}
+
+/* .Home-SubContainer-1
+{
+  flex: 0 0 20%;
+}
+.Home-SubContainer-2
+{
+  flex: 0 0 80%;
+} */
+
+
 
 .App {
   text-align: center;

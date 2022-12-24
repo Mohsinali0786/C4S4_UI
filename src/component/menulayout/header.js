@@ -15,51 +15,24 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import {SignupModal,SigninModal} from '../index';
+import { SignupModal, SigninModal } from '../index';
+import HomeIcon from '@mui/icons-material/Home';
+import IronIcon from '@mui/icons-material/Iron';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import { NotificationAddSharp, Settings } from '@mui/icons-material';
+import { Divider, Button } from '@mui/material';
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
-
-export default function PrimarySearchAppBar() {
+export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const NavBarLinks = [{ name: 'Home', icon: <HomeIcon />, link: '' },
+  { name: 'Wardrobe', icon: <IronIcon />, link: '' },
+  { name: 'Shopnow', icon: <StorefrontIcon />, link: '' },
+  { name: 'Whitelist', icon: <FormatListBulletedIcon />, link: '' },
+  { name: 'Place Order', icon: <BorderColorIcon />, link: '' }]
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -100,6 +73,8 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <SignupModal />
+      <SigninModal />
     </Menu>
   );
 
@@ -120,83 +95,45 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <SignupModal/>
-      <SigninModal/>
+      <Typography>
+        <p className='align-vertical'><span ><AccountCircle /></span><span>John Doe</span></p>
+      </Typography>
+      <SignupModal />
+      <SigninModal />
       <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+        <div className='align-vertical'>
+          <Settings />
+          <Button>Settings</Button>
+        </div>
       </MenuItem>
     </Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{backgroundColor:'black'}}>
+      <AppBar position="static" sx={{ backgroundColor: 'hsl(154deg 100% 1%)' }}>
         <Toolbar>
+          {
+            NavBarLinks.map((v) => {
+              return (
+                <Typography
+                  noWrap
+                  component="div"
+                  className='ml-10px  navlinks-icons'
+                  sx={{ display: { xs: 'none', sm: 'flex' } }}
+                >
+                  <span>{v.icon}</span>
+                  <span>{v.name}</span>
+                </Typography>
 
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            HELLO DOE
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+              )
+            })
+
+          }
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <SignupModal />
-            <SigninModal/>
+
+          <Box sx={{ display: { sm: 'none', lg: 'flex' } }}>
+
             <IconButton
               size="large"
               edge="end"
@@ -205,11 +142,16 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              className='Navbar-account-circle'
             >
               <AccountCircle />
             </IconButton>
+            <Divider orientation="vertical" flexItem className='divider' />
+            <Typography>
+              <p><span>John Doe</span><br /><span className='textColor'>Super admin</span></p>
+            </Typography>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { md: 'flex', lg: 'none' } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -221,6 +163,15 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
+          <IconButton
+            size="large"
+            aria-label="Notifications"
+            // aria-controls={menuId}
+            // onClick={handleProfileMenuOpen}
+            color="inherit"
+          >
+            <NotificationAddSharp />
+          </IconButton>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
