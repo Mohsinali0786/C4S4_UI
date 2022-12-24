@@ -19,7 +19,7 @@ function SideMenu() {
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      {/* <Sider trigger={null} collapsible collapsed={collapsed}>
       
             <Header
               className="site-layout-background"
@@ -59,10 +59,10 @@ function SideMenu() {
             },
           ]}
           />
-      </Sider>
+      </Sider> */}
       <Layout className="site-layout">
         <PrimarySearchAppBar/>
-        <Content
+        {/* <Content
           className="site-layout-background"
           style={{
             margin: '24px 16px',
@@ -83,7 +83,7 @@ function SideMenu() {
             <Card />
             <Card />
           </Stack>
-        </Content>
+        </Content> */}
       </Layout>
     </Layout>
   );

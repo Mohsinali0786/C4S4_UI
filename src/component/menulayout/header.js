@@ -15,6 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import {SignupModal,SigninModal} from '../index';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -139,6 +140,8 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
+      <SignupModal/>
+      <SigninModal/>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -158,15 +161,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{backgroundColor:'black'}}>
         <Toolbar>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
+
           <Typography
             variant="h6"
             noWrap
@@ -200,6 +195,8 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <SignupModal />
+            <SigninModal/>
             <IconButton
               size="large"
               edge="end"

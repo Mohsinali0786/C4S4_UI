@@ -1,3 +1,88 @@
+.logoimage {
+  width: 150px;
+  position: relative;
+  top: -50px;
+}
+
+.Auth-Modal {
+  text-align: center;
+  color: white !important;
+
+}
+
+.Auth-Modal h2 {
+  color: white !important;
+  font-weight: 600;
+}
+
+.Auth-Modal h6 {
+  color: white !important;
+  font-size: 13px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 10px;
+}
+.form-fields label{
+  font-weight: 300px;
+}
+.form-fields input {
+  background-color: #282c34;
+  padding: 10px;
+}
+
+.forgotpass-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.forgotpass-section>div {
+  display: flex;
+  align-items: center;
+}
+.forgotpass-section>div input {
+  margin-right: 10px;
+}
+input[type=checkbox]:not(:checked) {
+  height: 15px;
+  width: 15px;
+  border: 2px solid #11845B;
+  -webkit-appearance: none;
+}
+input[type=checkbox]:checked {
+  accent-color: #11845B;
+  height: 15px;
+  width: 15px;
+  /* border: 1px solid green; */
+}
+.forgotpass-section a h6{
+  color:#11845B !important;
+}
+.Register-Login-Btn{
+  color: #11845B !important;
+  font-weight: 900 !important;
+  border: 3px solid white !important;
+  width: 100%;
+  margin-top: 20px !important;
+}
+
+
+/* SigninPage */
+.create-account{
+  color: #11845B !important;
+
+}
+
+/* Sidebar-mainContainer */
+.Sidebar-mainContainer{
+  z-index: 1;
+
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +117,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -61,9 +147,9 @@
   background: #fff;
 }
 
-.cards-div{
+.cards-div {
 
-  display:flex !important;
+  display: flex !important;
   justify-content: center;
   margin-top: 10px;
   /* justify-content:space-evenly !important;
