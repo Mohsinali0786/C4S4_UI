@@ -266,7 +266,8 @@ input[type=checkbox]:checked {
   color: hsl(152deg 95% 39%);
 
 }
-.balance-Assets{
+
+.balance-Assets {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -274,116 +275,166 @@ input[type=checkbox]:checked {
   color: white;
   padding: 10px;
 }
-.balance-Assets >svg{
-  font-size: 60px !important; 
+
+.balance-Assets>svg {
+  font-size: 60px !important;
 }
-.balance-Assets div p{
+
+.balance-Assets div p {
   font-size: 20px;
 }
-.balance-Assets div p span{
+
+.balance-Assets div p span {
   color: hsl(152deg 95% 39%);
   margin-right: 5px;
   font-weight: 600;
   font-size: 22px;
 
 }
-.collection-section{
+
+.collection-section {
   display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: space-between;
 }
-.collection-section p{
+
+.collection-section p {
   /* flex:1; */
   color: white;
   font-size: 30px;
   font-weight: 800;
 }
-.collection-section p span{
+
+.collection-section p span {
   margin-right: 5px;
 }
-.collection-section >div{
+
+.collection-section>div {
   /* flex:2; */
   color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.collection-section-buttons{
+
+.collection-section-buttons {
   color: #11845B !important;
   font-weight: 900 !important;
   border: 3px solid white !important;
   margin-right: 10px !important;
 }
-.collection-section-buttons span{
+
+.collection-section-buttons span {
   color: white !important;
   margin-left: 5px !important;
 }
-.collection-sections-icons{
+
+.collection-sections-icons {
   background-color: #11845B !important;
   /* margin-right: 5px !important; */
   color: white !important;
   padding: 1px !important;
   margin-right: 5px !important;
-  min-width: 10px !important; 
+  min-width: 10px !important;
 }
-.collection-sections-icons:disabled{
+
+.collection-sections-icons:disabled {
   opacity: 0.3 !important;
 }
-.collection-sections-icons svg{
+
+.collection-sections-icons svg {
   padding: 0 !important;
   margin: 0 !important;
 }
+
 /* Cards */
 
-.card-top-section{
+.card-top-section {
   display: flex;
   justify-content: space-between;
   margin: 5px;
 }
-.card-top-section svg{
-  background-color:#282c34;
+
+.card-top-section svg {
+  background-color: #282c34;
   border-radius: 50%;
   margin-top: 5px;
   opacity: 0.65;
   color: white !important;
   padding: 3px;
 }
-.card-top-section p{
-  background-color:#282c34;
+
+.card-top-section p {
+  background-color: #282c34;
   margin-top: 5px;
   border-radius: 5px;
   opacity: 0.65;
   color: white !important;
   padding: 3px;
 }
-.minting{
-  background-color: #fc656f !important;
+
+.minting {
+
   display: flex;
   font-size: 14px !important;
   justify-content: space-between;
   margin: 5px 0px !important;
-  padding: 3px 5px!important;
+  padding: 3px 5px !important;
   border-radius: 5px;
-  color: #db1212 !important;
+  background-color: #1b0c0b !important;
   /* filter: brightness(100%); */
-
-  opacity: 0.8 !important;
+  /* opacity: 0.85 !important; */
   /* background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1 */
-  backdrop-filter: blur(70px) !important;
+  /* backdrop-filter: blur(70px) !important; */
   font-weight: 900 !important;
 }
-.Btns-Div{
+
+.minting > p {
+  color: #de3b2d !important;
+  /* opacity: 1 !important; */
+  margin: 5px 10px;
+
+}
+
+.Btns-Div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.detail-sell-btns{
+
+.detail-sell-btns {
   width: 100px !important;
+  font-size: 15px !important;
 }
-.detail-sell-btns :nth-child(1){
+
+.detail-btn {
   background-color: #282c34 !important;
   color: white !important;
+  font-weight: 600 !important;
+}
+
+.sell-btn {
+  background-color: #061d13 !important;
+  color: #11845B !important;
+  font-weight: 600 !important;
+
+}
+.card-item-specification{
+  display: flex;
+  justify-content: space-between;
+}
+.card-item-specification  div:first-child{
+  text-align: left;
+}
+.card-item-specification  div:last-child{
+  text-align: right;
+}
+.card-item-specification  div p:first-child{
+  color: #758089;
+}
+.card-item-specification  div p:last-child{
+  color: #11845B;
 }
 
 
