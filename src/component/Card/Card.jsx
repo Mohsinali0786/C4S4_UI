@@ -2,22 +2,22 @@ import cap from '../../assets/images/cap.jpg'
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import alien from '../../assets/images/costume.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export default function Cards() {
     return (
-        <Card sx={{ maxWidth: 345, backgroundColor: 'black' }}>
+        <Card  className='CardMain-Container'>
             {/* <CardContent sx={{}}> */}
             <CardMedia
                 sx={{ height: 140 }}
                 image={cap}
                 title="Cap"
+                className='card-image'
             >
                 <div className='card-top-section'>
                     <StarBorderOutlinedIcon />
@@ -40,9 +40,7 @@ export default function Cards() {
                 </div>
                 <div>
                     <p>Collection</p>
-                    <p>Allien Space Puffa
-                    </p>
-                    <FontAwesomeIcon icon={["fal", "coffee"]} />
+                    <p>Allien Space Puffa</p>
                 </div>
             </div>
             <div className='card-item-specification'>

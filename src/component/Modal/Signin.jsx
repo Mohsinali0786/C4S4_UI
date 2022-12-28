@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import SignupModal from './SignUpmodal';
-
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 const style = {
     position: 'absolute',
@@ -33,7 +33,7 @@ export default function SigninModal() {
     }
     return (
         <div>
-            <Button onClick={handleOpen}>Login</Button>
+            <Button onClick={handleOpen} className='auth-btns' variant='none'>Login</Button>
             <Modal
                 open={open}
                 onClose={handleClose}

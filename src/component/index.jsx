@@ -3,6 +3,7 @@ import SigninModal from './Modal/Signin'
 import SideBar from './Sidebar/sidebar'
 import NavBar from './menulayout/header'
 import Card from './Card/Card'
+import CardModal from './Modal/cardmodal'
 
 export{
     
@@ -10,6 +11,7 @@ export{
     SigninModal,
     SideBar,
     NavBar,
-    Card
+    Card,
+    CardModal
 
 }

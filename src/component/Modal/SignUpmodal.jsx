@@ -7,6 +7,7 @@ import logo from '../../assets/images/logo.png'
 import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 
 
 const style = {
@@ -28,7 +29,7 @@ export default function SignupModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Register</Button>
+      <Button onClick={handleOpen} className='auth-btns' variant='none'>Register</Button>
       <Modal
         open={open}
         onClose={handleClose}

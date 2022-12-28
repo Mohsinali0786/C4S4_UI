@@ -23,11 +23,17 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import { NotificationAddSharp, Settings } from '@mui/icons-material';
 import { Divider, Button } from '@mui/material';
+import ViewSidebarOutlinedIcon from '@mui/icons-material/ViewSidebarOutlined';
 
 
-export default function NavBar() {
+
+export default function NavBar({ showSidebar }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
   const NavBarLinks = [{ name: 'Home', icon: <HomeIcon />, link: '' },
   { name: 'Wardrobe', icon: <IronIcon />, link: '' },
   { name: 'Shopnow', icon: <StorefrontIcon />, link: '' },
@@ -53,6 +59,12 @@ export default function NavBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -71,6 +83,7 @@ export default function NavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
+
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <SignupModal />
@@ -98,8 +111,8 @@ export default function NavBar() {
       <Typography>
         <p className='align-vertical'><span ><AccountCircle /></span><span>John Doe</span></p>
       </Typography>
-      <SignupModal />
-      <SigninModal />
+      {/* <SignupModal />
+      <SigninModal /> */}
       <MenuItem onClick={handleProfileMenuOpen}>
         <div className='align-vertical'>
           <Settings />
@@ -110,29 +123,88 @@ export default function NavBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box >
       <AppBar position="static" sx={{ backgroundColor: 'hsl(154deg 100% 1%)' }}>
         <Toolbar>
-          {
-            NavBarLinks.map((v) => {
-              return (
-                <Typography
-                  noWrap
-                  component="div"
-                  className='ml-10px  navlinks-icons'
-                  sx={{ display: { xs: 'none', sm: 'flex' } }}
-                >
-                  <span>{v.icon}</span>
-                  <span>{v.name}</span>
-                </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg: 'none' } }}>
 
-              )
-            })
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { md: 'flex', lg: 'none' },
+              }}
+            >
+              {
+                NavBarLinks.map((v) => {
+                  return (
+                    <Typography
+                      noWrap
+                      component="div"
+                      className='navlinksMobile-icons'
+                      sx={{ display: { sm: 'flex', lg: 'none' } }}
+                    >
+                      <span>{v.icon}</span>
+                      <span>{v.name}</span>
+                    </Typography>
 
-          }
+                  )
+                })
+
+              }
+            </Menu>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'flex' } }}>
+            {
+              NavBarLinks.map((v) => {
+                return (
+                  <Typography
+                    noWrap
+                    component="div"
+                    className='navlinks-icons'
+                    sx={{ display: { xs: 'none', lg: 'flex' } }}
+                  >
+                    <span>{v.icon}</span>
+                    <span>{v.name}</span>
+                  </Typography>
+
+                )
+              })
+
+            }
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
+          <IconButton
+            size="large"
+            aria-label="Notifications"
+            color="inherit"
+          >
+            <NotificationAddSharp />
+          </IconButton>
 
-          <Box sx={{ display: { sm: 'none', lg: 'flex' } }}>
+
+          <Box sx={{ display: { xs: 'flex', lg: 'flex' },alignItems:'center' }}>
 
             <IconButton
               size="large"
@@ -146,35 +218,20 @@ export default function NavBar() {
             >
               <AccountCircle />
             </IconButton>
-            <Divider orientation="vertical" flexItem className='divider' />
-            <Typography>
-              <p><span>John Doe</span><br /><span className='textColor'>Super admin</span></p>
-            </Typography>
+            <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
+              <Divider orientation="vertical" flexItem className='divider' />
+              <Typography>
+                <p><span>John Doe</span><br /><span className='textColor'>Super admin</span></p>
+              </Typography>
+            </Box>
+            <div style={{}}>
+              <Button onClick={() => { showSidebar() }}><ViewSidebarOutlinedIcon sx={{ color: 'white' }} /></Button>
+            </div>
           </Box>
-          <Box sx={{ display: { md: 'flex', lg: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-          <IconButton
-            size="large"
-            aria-label="Notifications"
-            // aria-controls={menuId}
-            // onClick={handleProfileMenuOpen}
-            color="inherit"
-          >
-            <NotificationAddSharp />
-          </IconButton>
+
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
+      {/* {renderMobileMenu} */}
       {renderMenu}
     </Box>
   );

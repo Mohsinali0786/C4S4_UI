@@ -7,11 +7,10 @@ import { Button } from '@mui/material';
 export default function SideBar() {
 
     return (
-        <div className="Sidebar-mainContainer">
+        <div className="">
             <img src={logo} className='sidebar-logo' />
             <SideBarCard />
             <SideBarFilter />
-
             <Button variant='outlined' className='sidebar-auth-btn' >Settings<SettingsSuggestIcon /></Button>
             <Button variant='outlined' className='sidebar-auth-btn'>Logout<LogoutIcon /></Button>
         </div >

@@ -35,15 +35,17 @@
 
 }
 
-/* ::-webkit-scrollbar{
-  width: 5px;
+::-webkit-scrollbar {
+  width: 2px;
 }
-::-webkit-scrollbar-thumb{
-  background-color: red;
-}
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-thumb {
   background-color: white;
-} */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #061d13;
+}
 
 .logoimage {
   width: 150px;
@@ -51,6 +53,16 @@
   top: -50px;
 }
 
+.auth-btns {
+  color: #11845B !important;
+  margin-right: 10px !important;
+  font-weight: 600 !important;
+}
+
+/* .auth-icons{
+  color: black !important;
+  margin:  0px 8px !important;
+} */
 .Auth-Modal {
   text-align: center;
   color: white !important;
@@ -125,6 +137,148 @@ input[type=checkbox]:checked {
 }
 
 
+/* Modal Card */
+
+.modal-Card-Img {
+  /* width: 250px ;
+  height: 250px; */
+  height: 100% !important;
+}
+
+.image-Div {
+  /* height: 100%; */
+  flex: 1 !important;
+}
+
+.details-div {
+  flex: 2;
+}
+
+.modal-collections-details {
+  display: flex;
+
+}
+
+.RTFKT-Text {
+  color: #11845B;
+  font-weight: 900;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.Allien-text-icon {
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.Allien-text-icon>p {
+  margin: 0;
+
+}
+
+.Sale-text {
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: #1b0c0b;
+  color: #de3b2d;
+  font-weight: 900;
+  padding: 5px;
+  text-align: center;
+  margin: 0;
+
+}
+
+.minted-out-of {
+  color: #11845B;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.minted-out-of span {
+  font-size: 14px !important;
+}
+
+.wallet-details-Maindiv {
+  margin-left: 30px;
+  flex: 1;
+}
+
+.wallet-details-div {
+  display: flex;
+  font-size: 11px;
+  color: #11845B;
+  margin-left: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.see-more-btn {
+  color: #11845B !important;
+  font-size: 11px !important;
+}
+
+.productDetails {
+  color: #11845B !important;
+  /* background: rgb(0,0,0); */
+  padding: 5px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(13, 12, 12, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.productDetails div {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.productDetails div p {
+  margin: 0;
+}
+
+.quantity-btn-div {
+  display: flex;
+  justify-content: center;
+}
+
+.quantity-btn-div>span {
+  flex: 11;
+  text-align: center;
+  color: #05c168;
+  font-weight: 900;
+  background-color: #05190e;
+  font-size: 20px;
+}
+
+.quantity-btn {
+  background-color: #05c168 !important;
+  font-size: 25px !important;
+  height: 30px;
+  color: black !important;
+  font-weight: 600 !important;
+  flex: 1;
+}
+
+.GAS-FEE-Text {
+  color: #05c168;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 900;
+  /* margin: 0; */
+}
+
+.GAS-FEE-Text span {
+  display: block;
+}
+
+.MintNow-btn-Div button {
+  background-color: #05c168 !important;
+  width: 100% !important;
+  color: #0f172d !important;
+  font-weight: 900 !important;
+}
+
 /* SigninPage */
 .create-account {
   color: #11845B !important;
@@ -139,6 +293,11 @@ input[type=checkbox]:checked {
   position: sticky;
   top: 0px;
   overflow-y: scroll;
+  height: 100vh;
+  flex: 1;
+  /* width: 100% !important; */
+  width: 250px;
+  z-index: 1;
 }
 
 .sidebar-logo {
@@ -212,7 +371,26 @@ input[type=checkbox]:checked {
 .navlinks-icons {
   background-color: hsl(168deg 16% 6%);
   justify-content: space-between;
-  padding: 5px 20px;
+  padding: 5px 22px;
+  margin-right: 10px !important;
+}
+
+.navlinksMobile-icons {
+  margin: 10px !important;
+  align-items: center !important;
+
+}
+
+.navlinksMobile-icons:hover {
+  background-color: hsl(168deg 16% 6%);
+  color: white;
+  padding: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navlinksMobile-icons span {
+  margin-right: 10px;
 }
 
 .Navbar-account-circle svg {
@@ -225,8 +403,80 @@ input[type=checkbox]:checked {
 }
 
 /* Home */
-.Home-MainContainer {
-  display: flex;
+.hidesidebar {
+  display: none;
+}
+
+.showsidebar {
+  /* display: flex; */
+  /* z-index: 1; */
+}
+
+@media only screen and (max-width: 500px) {
+  .Btns-Div {
+    flex-direction: column !important;
+  }
+
+  .Btns-Div button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .card-item-specification {
+    flex-direction: column !important;
+  }
+
+  .card-item-specification div {
+    /* text-align: center !important; */
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .SidebarSections-Contaniner {
+    z-index: 1;
+  }
+
+  .MiddleSections-Contaniner {
+    /* position: relative;
+    left: -150px; */
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .SidebarSections-Contaniner {
+    width: 20px !important;
+  }
+
+
+
+
+}
+
+.HomeMainContainer {
+  background-color: black !important;
+  /* display: flex; */
+  padding-right: 15px;
+
+}
+
+.MiddleSections-Contaniner {
+  margin-left: 15px;
+  background-color: black !important;
+  /* width: 70%; */
+  flex: 3;
+}
+
+.SidebarSections-Contaniner {
+  /* z-index: 1; */
+}
+
+.showMiddleSection {
+  margin-left: 15px;
+
+
+
 }
 
 .home-searchbar {
@@ -237,6 +487,7 @@ input[type=checkbox]:checked {
   color: white;
   padding: 10px;
   border-radius: 10px;
+  width: 100% !important;
 
 }
 
@@ -260,10 +511,24 @@ input[type=checkbox]:checked {
   font-size: 30px;
   font-weight: 800;
   color: white;
+  text-align: left;
 }
 
 .balancedetails-text span {
   color: hsl(152deg 95% 39%);
+
+}
+
+.path-text {
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.path-text svg {
+  color: #11845B !important;
+  font-size: 30px !important;
 
 }
 
@@ -294,9 +559,65 @@ input[type=checkbox]:checked {
 
 .collection-section {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .collection-section {
+    display: block;
+  }
+
+  .collection-section p {
+    text-align: left;
+  }
+
+  .collection-section-btns {
+    justify-content: right;
+  }
+
+  .Modal-Main-Div {
+    flex-direction: column !important;
+    width: 320px !important;
+  }
+
+  .modal-collections-details {
+    flex-direction: column !important;
+  }
+
+  .modal-Card-Img {
+    width: 100%;
+    height: 200px !important;
+
+  }
+
+}
+
+@media only screen and (max-width: 970px) {
+  .Btns-Div {
+    flex-direction: column !important;
+  }
+
+  .Btns-Div button {
+
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  .collection-section-btns {
+    flex-direction: column !important;
+  }
+
+  .collection-section-btns * {
+    margin-bottom: 10px !important;
+  }
+
+  .collection-section-btns>button {
+    width: 200px;
+  }
 }
 
 .collection-section p {
@@ -350,6 +671,20 @@ input[type=checkbox]:checked {
 
 /* Cards */
 
+
+.CardMain-Container {
+  background-color: black !important;
+  padding: 2px 5px !important;
+  border: 1px solid #11845B !important;
+  border-radius: 8px !important;
+}
+
+.card-image {
+  -webkit-box-shadow: 0 0 5px 2px grey;
+  -moz-box-shadow: 0 0 5px 2px grey;
+  box-shadow: 0 0 5px 2px grey;
+}
+
 .card-top-section {
   display: flex;
   justify-content: space-between;
@@ -383,14 +718,11 @@ input[type=checkbox]:checked {
   padding: 3px 5px !important;
   border-radius: 5px;
   background-color: #1b0c0b !important;
-  /* filter: brightness(100%); */
-  /* opacity: 0.85 !important; */
-  /* background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1 */
-  /* backdrop-filter: blur(70px) !important; */
+
   font-weight: 900 !important;
 }
 
-.minting > p {
+.minting>p {
   color: #de3b2d !important;
   /* opacity: 1 !important; */
   margin: 5px 10px;
@@ -420,21 +752,29 @@ input[type=checkbox]:checked {
   font-weight: 600 !important;
 
 }
-.card-item-specification{
+
+.card-item-specification {
   display: flex;
   justify-content: space-between;
 }
-.card-item-specification  div:first-child{
+
+.card-item-specification div:first-child {
   text-align: left;
 }
-.card-item-specification  div:last-child{
+
+.card-item-specification div:last-child {
   text-align: right;
 }
-.card-item-specification  div p:first-child{
+
+.card-item-specification div p:first-child {
   color: #758089;
+  font-weight: 600;
+
 }
-.card-item-specification  div p:last-child{
+
+.card-item-specification div p:last-child {
   color: #11845B;
+  font-weight: 900;
 }
 
 
